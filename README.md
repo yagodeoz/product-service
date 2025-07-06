@@ -64,7 +64,8 @@ Una vez iniciado, accede a la documentación Swagger en:
 
 ```
 src/
-└── inventory/
+└── commons
+    inventory/
     └── product/
         ├── domain/          → Entidades y contratos (repos)
         ├── application/     → Casos de uso y DTOs
