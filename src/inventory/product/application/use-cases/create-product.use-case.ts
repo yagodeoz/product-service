@@ -1,13 +1,13 @@
 import { Inject, Injectable } from "@nestjs/common";
 import { Product } from "src/inventory/product/domain/entities/product.entity";
-import { ProductRepository } from "src/inventory/product/domain/repositories/product.repository";
 import { v4 as uuidv4 } from 'uuid';
+import { IProductRepository } from "../../domain/repositories/product.repository";
 
 @Injectable()
 export class CreateProductUseCase {
   constructor(
     @Inject('ProductRepository')
-    private readonly repository: ProductRepository,
+    private readonly repository: IProductRepository,
   ) {}
 
   async execute(code: string, name: string, price: number): Promise<Product> {

@@ -1,9 +1,9 @@
-import { Product } from "../entities/product.entity";
+import { IProduct } from "../interfaces/product.interface";
 
-export interface ProductRepository {
-  create(product: Product): Promise<Product>;
-  findAll(): Promise<Product[]>;
-  findById(id: string): Promise<Product | null>;
-  update(product: Product): Promise<void>;
+export interface IProductRepository {
+  create(product: IProduct): Promise<IProduct>;
+  findAll(): Promise<IProduct[]>;
+  findById(id: string): Promise<IProduct | null>;
+  update(product: IProduct): Promise<void>;
   delete(id: string): Promise<void>;
 }

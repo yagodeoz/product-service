@@ -1,13 +1,13 @@
 import { Inject, Injectable, NotFoundException } from "@nestjs/common";
 import { Product } from "src/inventory/product/domain/entities/product.entity";
-import { ProductRepository } from "src/inventory/product/domain/repositories/product.repository";
+import { IProductRepository } from "../../domain/repositories/product.repository";
 
 
 @Injectable()
 export class UpdateProductUseCase {
   constructor(
     @Inject('ProductRepository')
-    private readonly repository: ProductRepository,
+    private readonly repository: IProductRepository,
   ) {}
 
   async execute(id: string, code: string, name: string, price: number): Promise<void> {
